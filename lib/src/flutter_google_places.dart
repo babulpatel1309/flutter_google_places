@@ -91,7 +91,7 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
 class _PlacesAutocompleteOverlayState extends PlacesAutocompleteState {
   @override
   Widget build(BuildContext context) {
-    final theme = widget.customTheme ?? Theme.of(context);
+    final ThemeData theme = widget.customTheme.data ?? Theme.of(context);
 
     final headerTopLeftBorderRadius = widget.overlayBorderRadius != null
         ? widget.overlayBorderRadius.topLeft
