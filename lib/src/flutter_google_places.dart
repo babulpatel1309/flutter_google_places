@@ -25,7 +25,7 @@ class PlacesAutocompleteWidget extends StatefulWidget {
   final Widget logo;
   final ValueChanged<PlacesAutocompleteResponse> onError;
   final int debounce;
-  final Theme customTheme;
+  final ThemeData customTheme;
 
   /// optional - sets 'proxy' value in google_maps_webservice
   ///
@@ -91,7 +91,7 @@ class _PlacesAutocompleteScaffoldState extends PlacesAutocompleteState {
 class _PlacesAutocompleteOverlayState extends PlacesAutocompleteState {
   @override
   Widget build(BuildContext context) {
-    final ThemeData theme = widget.customTheme.data ?? Theme.of(context);
+    final ThemeData theme = widget.customTheme ?? Theme.of(context);
 
     final headerTopLeftBorderRadius = widget.overlayBorderRadius != null
         ? widget.overlayBorderRadius.topLeft
@@ -487,7 +487,7 @@ class PlacesAutocomplete {
       num radius,
       String language,
       String sessionToken,
-      Theme customTheme,
+      ThemeData customTheme,
       List<String> types,
       List<Component> components,
       bool strictbounds,
